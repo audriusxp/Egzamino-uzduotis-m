@@ -11,6 +11,13 @@
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PagrindinePrograma.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbveiksmai/DuonbazesVeiksmai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dbveiksmai/ReceptoVeiksmai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Indigrientas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Receptai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utility/KonsolesVeiksmai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utility/PapildomiVeiksmai.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
