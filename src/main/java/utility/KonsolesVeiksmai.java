@@ -9,8 +9,9 @@ public class KonsolesVeiksmai {
 
     private static final Scanner skait = new Scanner(System.in);
 
-    public static Receptai nuskaitytiReceptaiIsKonsoles() {
+   /* public static Receptai nuskaitytiReceptaiIsKonsoles() {
         skait.nextLine();
+
         System.out.println("Įveskite recepto pavadinimą: ");
         String pavadinimas = skait.nextLine();
         System.out.println("Įveskite  kainą: ");
@@ -22,19 +23,22 @@ public class KonsolesVeiksmai {
 
         return new Receptai( pavadinimas,kaina,nurodymai);
     }
+    */
 
-/*
 
-    public static Autorius nuskaitytiAutoriu() {
+
+
+   public static Receptai nuskaitytiReceptai() {
         skait.nextLine();
-        System.out.println("Įveskite autoriaus vardą: ");
-        String vardas = skait.nextLine();
-        System.out.println("Įveskite autoriaus pavardę: ");
-        String pavarde = skait.nextLine();
-        System.out.println("Įveskite autoriaus šalį: ");
-        String salis = skait.nextLine();
-        return new Autorius(vardas, pavarde, salis);
-    }*/
+        System.out.println("Įveskite recepto pavadinima: ");
+        String pavadinimas = skait.nextLine();
+        System.out.println("Įveskite kaina: ");
+        Double kaina = skait.nextDouble();
+        System.out.println("Įveskite recepto nurodymus: ");
+        skait.nextLine();
+        String nurodymai = skait.nextLine();
+        return new Receptai(pavadinimas, kaina,nurodymai);
+    }
 
     public static int meniuPasirinkimai() {
         System.out.println("Meniu pasirinkimai:");
@@ -44,9 +48,21 @@ public class KonsolesVeiksmai {
         return skait.nextInt();
     }
 
+    public static Receptai nuskaitytiRecepta(){
+        skait.nextLine();
+        System.out.println("Iveskite recepto pavadinima" );
+        String pavadinimas = skait.nextLine();
+        System.out.println("Iveskite recepto kaina");
+        Double kaina = skait.nextDouble();
+        System.out.println("Iveskite recepto aprasyma");
+        String aprasymas = skait.nextLine();
+        return new Receptai(pavadinimas,kaina,aprasymas);
 
 
 
+    }
 
 
+    /*public static void idetiReceptai(Connection jungtis, Receptai naujiReceptai) {
+    }*/
 }

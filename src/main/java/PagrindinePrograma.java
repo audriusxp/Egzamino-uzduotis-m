@@ -23,6 +23,38 @@ public class PagrindinePrograma {
                 visiReceptai = ReceptoVeiksmai.grazintiVisusReceptai(jungtis);
                 PapildomiVeiksmai.isvestiListaEilutemis(visiReceptai);
                 break;
+            case 3:
+              Receptai naujasReceptas = (KonsolesVeiksmai.nuskaitytiReceptai());
+              //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
+              ReceptoVeiksmai.idetiRecepta(jungtis,naujasReceptas);
+
+
+              /*
+              visiReceptai=ReceptoVeiksmai.grazintiVisusReceptai(jungtis);
+              int receptoId = visiReceptai.get(visiReceptai.size() -1)).getId();
+              if(receptoId <=0) {
+                  Receptai receptai = KonsolesVeiksmai.nuskaitytiReceptai();
+                  ReceptoVeiksmai.idetiRecepta(jungtis, receptai);
+                  receptai = ReceptoVeiksmai.grazintiVisusReceptai(jungtis);
+                  receptoId = receptai.get(receptai.size() - 1).getId();
+              }
+
+
+
+               break;
+         /*  case 3:
+                Receptai naujiReceptai = KonsolesVeiksmai.nuskaitytiReceptaiIsKonsoles();
+
+                KonsolesVeiksmai.idetiReceptai(jungtis, naujiReceptai);
+                visiReceptai = KonsolesVeiksmai.grazintiVisiReceptai(jungtis);
+                int RecaptaiId = visiReceptai.get(visiReceptai.size() - 1).getId();
+                if (RecaptaiId <= 0) {
+                    ReceptaiId receptas = KonsolesVeiksmai.nuskaitytiReceptaiIsKonsoles();
+                    ReceptoVeiksmai.idetiReceptai(jungtis, receptas);
+                    receptas = ReceptoVeiksmai.gautiVisusReceptai(jungtis);
+                    ReceptaiId= Receptai.get(receptas.size() - 1).getId();
+                }*/
+
 
         }
     }
