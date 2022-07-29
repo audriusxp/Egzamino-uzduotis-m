@@ -1,4 +1,5 @@
 import dbveiksmai.DuonbazesVeiksmai;
+import dbveiksmai.IngridentoVeiksmai;
 import dbveiksmai.ReceptoVeiksmai;
 import entity.Indigrientas;
 import entity.Receptai;
@@ -27,6 +28,11 @@ public class PagrindinePrograma {
               Receptai naujasReceptas = (KonsolesVeiksmai.nuskaitytiReceptai());
               //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
               ReceptoVeiksmai.idetiRecepta(jungtis,naujasReceptas);
+              break;
+              case 2:
+                    Indigrientas naujasIngridentas= (KonsolesVeiksmai.nuskaitytiIngredentas());
+                IngridentoVeiksmai.grazintiVisusIngridientus(jungtis,naujasIngridentas);
+                break;
 
 
               /*

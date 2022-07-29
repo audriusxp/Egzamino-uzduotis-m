@@ -5,7 +5,7 @@ public class Indigrientas {
     private String pavadinimas;
     private Double kaina;
 
-    public Indigrientas(int id, String pavadinimas, Double kaina) {
+    public Indigrientas(String pavadinimas) {
         this.id = id;
         this.pavadinimas = pavadinimas;
         this.kaina = kaina;

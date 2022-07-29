@@ -1,7 +1,6 @@
 package dbveiksmai;
 
 import entity.Indigrientas;
-import entity.Receptai;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +21,7 @@ public class IngridentoVeiksmai {
                 int id = rezultatas.getInt("id");
                 String pavadinimas = rezultatas.getString("pavadinimas");
                 Double kaina = rezultatas.getDouble("kaina");
-                Indigrientas laikiniIndigrientai = new Indigrientas(id,pavadinimas,kaina);
+                Indigrientas laikiniIndigrientai = new Indigrientas(pavadinimas);
                 visiIngredientai.add(laikiniIndigrientai);
             }
         } catch (SQLException e) {

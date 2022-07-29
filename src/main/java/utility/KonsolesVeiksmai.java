@@ -1,5 +1,6 @@
 package utility;
 
+import entity.Indigrientas;
 import entity.Receptai;
 
 import java.sql.Connection;
@@ -61,6 +62,13 @@ public class KonsolesVeiksmai {
 
 
     }
+    public static Indigrientas nuskaitytiIngredentas(){
+       skait.nextLine();
+        System.out.println("skait = " + skait);
+       String pavadinimas = skait.nextLine();
+        return new Indigrientas(pavadinimas);
+    }
+
 
 
     /*public static void idetiReceptai(Connection jungtis, Receptai naujiReceptai) {
