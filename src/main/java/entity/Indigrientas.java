@@ -46,6 +46,11 @@ public class Indigrientas {
                 ", kaina=" + kaina +
                 '}';
     }
+
+    public Indigrientas(String pavadinimas, Double kaina) {
+        this.pavadinimas = pavadinimas;
+        this.kaina = kaina;
+    }
 }
 
 

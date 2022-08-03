@@ -24,14 +24,19 @@ public class PagrindinePrograma {
                 visiReceptai = ReceptoVeiksmai.grazintiVisusReceptai(jungtis);
                 PapildomiVeiksmai.isvestiListaEilutemis(visiReceptai);
                 break;
+            case 2:
+                Double kainuVidurkis = IngridentoVeiksmai.kainuVidurkis(jungtis);
+                break;
+
             case 6:
               Receptai naujasReceptas = (KonsolesVeiksmai.nuskaitytiReceptai());
               //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
               ReceptoVeiksmai.idetiRecepta(jungtis,naujasReceptas);
               break;
-              case 2:
+              case 3:
                     Indigrientas naujasIngridentas= (KonsolesVeiksmai.nuskaitytiIndigrientai());
-                IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
+                /*IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);*/
+                IngridentoVeiksmai.idetiIngridienta(jungtis,naujasIngridentas);
                 break;
             case 4:
                 visiIngredijentai = IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);

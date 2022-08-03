@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="243e53a3-169f-4205-b206-2238d3b1a0d9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PagrindinePrograma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PagrindinePrograma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbveiksmai/IngridentoVeiksmai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbveiksmai/IngridentoVeiksmai.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Indigrientas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Indigrientas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utility/KonsolesVeiksmai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/KonsolesVeiksmai.java" afterDir="false" />
     </list>
@@ -34,13 +37,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dbveiksmai" />

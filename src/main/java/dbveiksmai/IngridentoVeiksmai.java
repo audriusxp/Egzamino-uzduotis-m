@@ -1,6 +1,7 @@
 package dbveiksmai;
 
 import entity.Indigrientas;
+import entity.Receptai;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,4 +33,40 @@ public class IngridentoVeiksmai {
 
 
     }
+    public static void idetiIngridienta(Connection jungtis, Indigrientas indigrientas) {
+        String sqlUzklausa = "INSERT INTO indigrientas(pavadinimas,kaina) VALUES (?, ?)";
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            paruostukas.setString(1, indigrientas.getPavadinimas());
+            paruostukas.setDouble(2, indigrientas.getKaina());
+            paruostukas.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko įdėti duomenų į duomenų bazę");
+        }
+    }
+
+    public static Double  kainuVidurkis(Connection jungtis){
+        String sqlUzklausa = "SELECT AVG(kaina)\n" + "FROM indigrientas";
+
+
+        double vidurkis=0;
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            ResultSet rezultatas = paruostukas.executeQuery();
+            while (rezultatas.next()){
+                vidurkis = rezultatas.getDouble("AVG(kaina)");
+                System.out.println("vidurkis = " + vidurkis);
+
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko gauti duomenų  duomenu bazeje");
+        }
+      return vidurkis;
+    }
+
+
+
 }
