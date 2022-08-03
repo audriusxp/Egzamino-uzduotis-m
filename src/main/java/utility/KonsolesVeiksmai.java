@@ -53,7 +53,7 @@ public class KonsolesVeiksmai {
         System.out.println("Įveskite kaina: ");
         Double kaina = skait.nextDouble();
 
-        return new Indigrientas(pavadinimas, kaina);
+        return new Indigrientas(pavadinimas,kaina);
 
 
     }

@@ -5,18 +5,13 @@ public class Indigrientas {
     private String pavadinimas;
     private Double kaina;
 
-    public Indigrientas(String pavadinimas, Double kaina) {
-        this.id = this.id;
-        this.pavadinimas = pavadinimas;
-        this.kaina = this.kaina;
-    }
-
     public Indigrientas() {
     }
 
-    /* pridtas naujas konstruktorius*/
     public Indigrientas(int id, String pavadinimas, Double kaina) {
-
+        this.id = id;
+        this.pavadinimas = pavadinimas;
+        this.kaina = kaina;
     }
 
     public int getId() {
@@ -52,3 +47,7 @@ public class Indigrientas {
                 '}';
     }
 }
+
+
+
+
