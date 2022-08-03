@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class IngridentoVeiksmai {
 
-    public static ArrayList<Indigrientas> grazintiVisusIngridientus(Connection jungtis) {
-        ArrayList<Indigrientas> visiIngredientai = new ArrayList<>();
+    public static ArrayList<Indigrientas> grazintiVisusIndigrientus(Connection jungtis) {
+        ArrayList<Indigrientas> visiIndigrientai = new ArrayList<>();
         String sqlUzklausa = "SELECT * FROM indigrientas";
 
         try {
@@ -21,14 +21,14 @@ public class IngridentoVeiksmai {
                 int id = rezultatas.getInt("id");
                 String pavadinimas = rezultatas.getString("pavadinimas");
                 Double kaina = rezultatas.getDouble("kaina");
-                Indigrientas laikiniIndigrientai = new Indigrientas(pavadinimas);
-                visiIngredientai.add(laikiniIndigrientai);
+                Indigrientas laikiniIndigrientai = new Indigrientas(id,pavadinimas,kaina);
+                visiIndigrientai.add(laikiniIndigrientai); /*isjungtas indigrijentu ivedimas, bet vistiek galima ivesti, tik ju nesaugo*/
             }
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Nepavyko gauti duomenų (receptu) iš DB");
         }
-        return visiIngredientai;
+        return visiIndigrientai;
 
 
     }

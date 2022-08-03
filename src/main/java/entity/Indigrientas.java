@@ -5,13 +5,18 @@ public class Indigrientas {
     private String pavadinimas;
     private Double kaina;
 
-    public Indigrientas(String pavadinimas) {
-        this.id = id;
+    public Indigrientas(String pavadinimas, Double kaina) {
+        this.id = this.id;
         this.pavadinimas = pavadinimas;
-        this.kaina = kaina;
+        this.kaina = this.kaina;
     }
 
     public Indigrientas() {
+    }
+
+    /* pridtas naujas konstruktorius*/
+    public Indigrientas(int id, String pavadinimas, Double kaina) {
+
     }
 
     public int getId() {

@@ -24,14 +24,18 @@ public class PagrindinePrograma {
                 visiReceptai = ReceptoVeiksmai.grazintiVisusReceptai(jungtis);
                 PapildomiVeiksmai.isvestiListaEilutemis(visiReceptai);
                 break;
-            case 3:
+            case 6:
               Receptai naujasReceptas = (KonsolesVeiksmai.nuskaitytiReceptai());
               //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
               ReceptoVeiksmai.idetiRecepta(jungtis,naujasReceptas);
               break;
               case 2:
-                    Indigrientas naujasIngridentas= (KonsolesVeiksmai.nuskaitytiIngredentas());
-                IngridentoVeiksmai.grazintiVisusIngridientus(jungtis,naujasIngridentas);
+                    Indigrientas naujasIngridentas= (KonsolesVeiksmai.nuskaitytiIndigrientai());
+                IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
+                break;
+            case 4:
+                visiIngredijentai = IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
+                PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
                 break;
 
 
@@ -64,5 +68,6 @@ public class PagrindinePrograma {
 
         }
     }
+
 
 }
