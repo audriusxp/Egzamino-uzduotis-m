@@ -22,7 +22,7 @@ public class IngridentoVeiksmai {
                 int id = rezultatas.getInt("id");
                 String pavadinimas = rezultatas.getString("pavadinimas");
                 Double kaina = rezultatas.getDouble("kaina");
-                Indigrientas laikiniIndigrientai = new Indigrientas(id,pavadinimas,kaina);
+                Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);
                 visiIndigrientai.add(laikiniIndigrientai); /*isjungtas indigrijentu ivedimas, bet vistiek galima ivesti, tik ju nesaugo*/
             }
         } catch (SQLException e) {
@@ -33,6 +33,7 @@ public class IngridentoVeiksmai {
 
 
     }
+
     public static void idetiIngridienta(Connection jungtis, Indigrientas indigrientas) {
         String sqlUzklausa = "INSERT INTO indigrientas(pavadinimas,kaina) VALUES (?, ?)";
         try {
@@ -46,15 +47,15 @@ public class IngridentoVeiksmai {
         }
     }
 
-    public static Double  kainuVidurkis(Connection jungtis){
+    public static Double kainuVidurkis(Connection jungtis) {
         String sqlUzklausa = "SELECT AVG(kaina)\n" + "FROM indigrientas";
 
 
-        double vidurkis=0;
+        double vidurkis = 0;
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
             ResultSet rezultatas = paruostukas.executeQuery();
-            while (rezultatas.next()){
+            while (rezultatas.next()) {
                 vidurkis = rezultatas.getDouble("AVG(kaina)");
                 System.out.println("vidurkis = " + vidurkis);
 
@@ -64,9 +65,27 @@ public class IngridentoVeiksmai {
             e.printStackTrace();
             System.out.println("Nepavyko gauti duomenų  duomenu bazeje");
         }
-      return vidurkis;
+        return vidurkis;
     }
 
+    public static Double brangiausiasIndigrientas(Connection jungtis) {
+        String sqlUzklausa = "SELECT MAX(kaina)FROM indigrientas";
+        double brangiausia = 0;
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            ResultSet rezultatas = paruostukas.executeQuery();
+            while (rezultatas.next()) {
+                brangiausia = rezultatas.getDouble("MAX(kaina)");
+                System.out.println("brangiausia = " + brangiausia);
 
 
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko gauti duomenų  duomenu bazeje");
+        }
+        return brangiausia;
+
+
+    }
 }

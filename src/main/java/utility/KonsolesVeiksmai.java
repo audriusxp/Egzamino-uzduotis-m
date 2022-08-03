@@ -41,7 +41,11 @@ public class KonsolesVeiksmai {
     public static int meniuPasirinkimai() {
         System.out.println("Meniu pasirinkimai:");
         System.out.println("1 - išvesti visus Receptus");
-       
+        System.out.println("2 - Išvesti visų ingredientų kainų vidurkį");
+        System.out.println("3 - Išvesti visus ingredientus pigesnius už X (X - kaina)");
+        System.out.println("4 -Išvesti TOP X brangiausių ingredientų. (X - kelis)");
+        System.out.println("5 - Išvesti kokie ingredientai yra n-ajame recepte. (n - id)\n");
+        System.out.println("6 - Pridėti naują receptą ");
         return skait.nextInt();
 
     }
@@ -57,7 +61,6 @@ public class KonsolesVeiksmai {
 
 
     }
-
 
 
 }

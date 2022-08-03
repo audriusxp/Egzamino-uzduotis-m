@@ -17,7 +17,12 @@ public class PagrindinePrograma {
         ArrayList<Receptai> visiReceptai = new ArrayList<>();
         ArrayList<Indigrientas> visiIngredijentai= new ArrayList<>();
 
-       int pasirinkimas = KonsolesVeiksmai.meniuPasirinkimai();
+        int pasirinkimas = KonsolesVeiksmai.meniuPasirinkimai();
+
+
+
+
+
 
         switch (pasirinkimas) {
             case 1:
@@ -33,7 +38,7 @@ public class PagrindinePrograma {
               //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
               ReceptoVeiksmai.idetiRecepta(jungtis,naujasReceptas);
               break;
-              case 3:
+              case 7:
                     Indigrientas naujasIngridentas= (KonsolesVeiksmai.nuskaitytiIndigrientai());
                 /*IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);*/
                 IngridentoVeiksmai.idetiIngridienta(jungtis,naujasIngridentas);
@@ -42,6 +47,9 @@ public class PagrindinePrograma {
                 visiIngredijentai = IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
                 PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
                 break;
+            case 3:
+                   Double  brangiausiasIndigrientas = IngridentoVeiksmai.brangiausiasIndigrientas(jungtis);
+            break;
 
 
               /*
