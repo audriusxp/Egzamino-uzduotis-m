@@ -22,6 +22,10 @@ public class IngridentoVeiksmai {
                 String pavadinimas = rezultatas.getString("pavadinimas");
                 Double kaina = rezultatas.getDouble("kaina");
                 Indigrientas laikiniIndigrientai = new Indigrientas(id,pavadinimas,kaina);
+                System.out.println("id = " + id);
+                System.out.println("pavadinimas = " + pavadinimas);
+                System.out.println("kaina = " + kaina);
+                System.out.println("laikiniIndigrientai = " + laikiniIndigrientai);
                 visiIndigrientai.add(laikiniIndigrientai); /*isjungtas indigrijentu ivedimas, bet vistiek galima ivesti, tik ju nesaugo*/
             }
         } catch (SQLException e) {
@@ -29,7 +33,5 @@ public class IngridentoVeiksmai {
             System.out.println("Nepavyko gauti duomenų (receptu) iš DB");
         }
         return visiIndigrientai;
-
-
     }
 }

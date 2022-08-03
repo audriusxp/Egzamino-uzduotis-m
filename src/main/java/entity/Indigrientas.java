@@ -15,8 +15,11 @@ public class Indigrientas {
     }
 
     /* pridtas naujas konstruktorius*/
-    public Indigrientas(int id, String pavadinimas, Double kaina) {
 
+    public Indigrientas(int id, String pavadinimas, Double kaina) {
+        this.id = id;
+        this.pavadinimas = pavadinimas;
+        this.kaina = kaina;
     }
 
     public int getId() {

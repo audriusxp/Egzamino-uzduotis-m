@@ -15,9 +15,9 @@ public class PagrindinePrograma {
         Connection jungtis = DuombazesVeiksmai.prisijungtiPrieDuombazes();
 
         ArrayList<Receptai> visiReceptai = new ArrayList<>();
-        ArrayList<Indigrientas> visiIngredijentai= new ArrayList<>();
+        ArrayList<Indigrientas> visiIngredijentai = new ArrayList<>();
 
-       int pasirinkimas = KonsolesVeiksmai.meniuPasirinkimai();
+        int pasirinkimas = KonsolesVeiksmai.meniuPasirinkimai();
 
         switch (pasirinkimas) {
             case 1:
@@ -25,17 +25,18 @@ public class PagrindinePrograma {
                 PapildomiVeiksmai.isvestiListaEilutemis(visiReceptai);
                 break;
             case 6:
-              Receptai naujasReceptas = (KonsolesVeiksmai.nuskaitytiReceptai());
-              //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
-              ReceptoVeiksmai.idetiRecepta(jungtis,naujasReceptas);
-              break;
-              case 2:
-                    Indigrientas naujasIngridentas= (KonsolesVeiksmai.nuskaitytiIndigrientai());
+                Receptai naujasReceptas = (KonsolesVeiksmai.nuskaitytiReceptai());
+                //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
+                ReceptoVeiksmai.idetiRecepta(jungtis, naujasReceptas);
+                break;
+            case 2:
+                Indigrientas naujasIngridentas = (KonsolesVeiksmai.nuskaitytiIndigrientai());
                 IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
                 break;
             case 4:
                 visiIngredijentai = IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
                 PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
+                System.out.println("vis = " + visiIngredijentai.size());
                 break;
 
 
