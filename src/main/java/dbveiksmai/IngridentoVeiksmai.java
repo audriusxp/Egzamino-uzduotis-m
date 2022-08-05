@@ -23,7 +23,7 @@ public class IngridentoVeiksmai {
                 String pavadinimas = rezultatas.getString("pavadinimas");
                 Double kaina = rezultatas.getDouble("kaina");
                 Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);
-                visiIndigrientai.add(laikiniIndigrientai); /*isjungtas indigrijentu ivedimas, bet vistiek galima ivesti, tik ju nesaugo*/
+                visiIndigrientai.add(laikiniIndigrientai);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -68,24 +68,44 @@ public class IngridentoVeiksmai {
         return vidurkis;
     }
 
-    public static Double brangiausiasIndigrientas(Connection jungtis) {
-        String sqlUzklausa = "SELECT MAX(kaina)FROM indigrientas";
-        double brangiausia = 0;
+   /* public static ArrayList<Indigrientas> brangiausi(Connection jungtis) {
+        ArrayList<Indigrientas> brangiausiIndigrijeintai = new ArrayList<>();
+        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT (? )";
+
         try {
-            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            ResultSet rezultatas = paruostukas.executeQuery();
-            while (rezultatas.next()) {
-                brangiausia = rezultatas.getDouble("MAX(kaina)");
-                System.out.println("brangiausia = " + brangiausia);
+                PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+                ResultSet rezultatas = paruostukas.executeQuery();
+                while (rezultatas.next()) {
 
-
-            }
+                    Double kaina = rezultatas.getDouble("kaina");
+                    Indigrientas laikiniIndigrientai = new Indigrientas (kaina);
+                    brangiausiIndigrijeintai.add(laikiniIndigrientai);
+                }
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Nepavyko gauti duomenų  duomenu bazeje");
         }
-        return brangiausia;
+        return brangiausiIndigrijeintai;
 
 
-    }
+    }*/
+
+    public static  ArrayList <Indigrientas> grazintiKainas(Connection jungtis, int x) {
+        ArrayList<Indigrientas> kainos = new ArrayList<>();
+        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT (5 )";
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            paruostukas.setInt(1, x);
+            ResultSet rezultatas = paruostukas.executeQuery();
+            while (rezultatas.next()) {
+                kainos.add(indigrientas( rezultatas.getDouble("kaina"), rezultatas.getInt("grazintiKainas"));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko pasiekti duomenų.");
+        }
+        return   kainos;
+
+
 }

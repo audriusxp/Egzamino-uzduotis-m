@@ -48,7 +48,9 @@ public class PagrindinePrograma {
                 PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
                 break;
             case 3:
-                   Double  brangiausiasIndigrientas = IngridentoVeiksmai.brangiausiasIndigrientas(jungtis);
+
+               visiIngredijentai= IngridentoVeiksmai.grazintiKainas(jungtis);
+                PapildomiVeiksmai.isvestiListaEilutemis(visiReceptai);
             break;
 
 
