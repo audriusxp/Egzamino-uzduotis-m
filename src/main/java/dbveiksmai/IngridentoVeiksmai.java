@@ -90,22 +90,26 @@ public class IngridentoVeiksmai {
 
     }*/
 
-    public static  ArrayList <Indigrientas> grazintiKainas(Connection jungtis, int x) {
-        ArrayList<Indigrientas> kainos = new ArrayList<>();
+    public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis, int x) {
+        ArrayList<Indigrientas> brangiausiIndigrijentai = new ArrayList<>();
         String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT (5 )";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
             paruostukas.setInt(1, x);
             ResultSet rezultatas = paruostukas.executeQuery();
-            while (rezultatas.next()) {
+            int id = rezultatas.getInt("id");
+            String pavadinimas = rezultatas.getString("pavadinimas");
+            Double kaina = rezultatas.getDouble("kaina");
+            Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);
+            /*while (rezultatas.next()) {
                 kainos.add(indigrientas( rezultatas.getDouble("kaina"), rezultatas.getInt("grazintiKainas"));
-            }
-        }
-        catch (SQLException e) {
+            }*/
+        } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Nepavyko pasiekti duomenų.");
         }
-        return   kainos;
+        return brangiausiIndigrijentai;
 
 
+    }
 }

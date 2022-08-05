@@ -49,8 +49,8 @@ public class PagrindinePrograma {
                 break;
             case 3:
 
-               visiIngredijentai= IngridentoVeiksmai.grazintiKainas(jungtis);
-                PapildomiVeiksmai.isvestiListaEilutemis(visiReceptai);
+            ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus = IngridentoVeiksmai.grazintiBrangiausiusIngridijentus(jungtis);
+
             break;
 
 
