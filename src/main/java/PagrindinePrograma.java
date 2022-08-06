@@ -44,7 +44,7 @@ public class PagrindinePrograma {
                 IngridentoVeiksmai.idetiIngridienta(jungtis,naujasIngridentas);
                 break;
             case 4:
-                visiIngredijentai = IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
+                visiIngredijentai = IngridentoVeiksmai.grazintiBrangiausiusIngridijentus(jungtis,5);
                 PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
                 break;
             case 3:

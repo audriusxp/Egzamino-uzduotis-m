@@ -96,7 +96,7 @@ public class IngridentoVeiksmai {
         String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT ? ";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            paruostukas.setInt(KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu(?));
+            paruostukas.setInt(KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu();
           /* paruostukas.setInt(1, x);*/
             ResultSet rezultatas = paruostukas.executeQuery();
             int id = rezultatas.getInt("id");
