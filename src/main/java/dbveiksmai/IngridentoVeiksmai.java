@@ -23,16 +23,23 @@ public class IngridentoVeiksmai {
                 int id = rezultatas.getInt("id");
                 String pavadinimas = rezultatas.getString("pavadinimas");
                 Double kaina = rezultatas.getDouble("kaina");
+<<<<<<< HEAD
+                Indigrientas laikiniIndigrientai = new Indigrientas(id,pavadinimas,kaina);
+                System.out.println("id = " + id);
+                System.out.println("pavadinimas = " + pavadinimas);
+                System.out.println("kaina = " + kaina);
+                System.out.println("laikiniIndigrientai = " + laikiniIndigrientai);
+                visiIndigrientai.add(laikiniIndigrientai); /*isjungtas indigrijentu ivedimas, bet vistiek galima ivesti, tik ju nesaugo*/
+=======
                 Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);
                 visiIndigrientai.add(laikiniIndigrientai);
+>>>>>>> 70f4713f7680a21770aff22312c4b744ea3c952c
             }
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Nepavyko gauti duomenų (receptu) iš DB");
         }
         return visiIndigrientai;
-
-
     }
 
     public static void idetiIngridienta(Connection jungtis, Indigrientas indigrientas) {

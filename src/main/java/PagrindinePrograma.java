@@ -15,14 +15,17 @@ public class PagrindinePrograma {
         Connection jungtis = DuombazesVeiksmai.prisijungtiPrieDuombazes();
 
         ArrayList<Receptai> visiReceptai = new ArrayList<>();
-        ArrayList<Indigrientas> visiIngredijentai= new ArrayList<>();
+        ArrayList<Indigrientas> visiIngredijentai = new ArrayList<>();
 
         int pasirinkimas = KonsolesVeiksmai.meniuPasirinkimai();
+<<<<<<< HEAD
+=======
 
 
 
 
 
+>>>>>>> 70f4713f7680a21770aff22312c4b744ea3c952c
 
         switch (pasirinkimas) {
             case 1:
@@ -34,6 +37,15 @@ public class PagrindinePrograma {
                 break;
 
             case 6:
+<<<<<<< HEAD
+                Receptai naujasReceptas = (KonsolesVeiksmai.nuskaitytiReceptai());
+                //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
+                ReceptoVeiksmai.idetiRecepta(jungtis, naujasReceptas);
+                break;
+            case 2:
+                Indigrientas naujasIngridentas = (KonsolesVeiksmai.nuskaitytiIndigrientai());
+                IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
+=======
               Receptai naujasReceptas = (KonsolesVeiksmai.nuskaitytiReceptai());
               //int receptoId = KonsolesVeiksmai.nuskaitytiReceptai().getId();
               ReceptoVeiksmai.idetiRecepta(jungtis,naujasReceptas);
@@ -42,10 +54,12 @@ public class PagrindinePrograma {
                     Indigrientas naujasIngridentas= (KonsolesVeiksmai.nuskaitytiIndigrientai());
                 /*IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);*/
                 IngridentoVeiksmai.idetiIngridienta(jungtis,naujasIngridentas);
+>>>>>>> 70f4713f7680a21770aff22312c4b744ea3c952c
                 break;
             case 4:
                 visiIngredijentai = IngridentoVeiksmai.grazintiVisusIndigrientus(jungtis);
                 PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
+                System.out.println("vis = " + visiIngredijentai.size());
                 break;
             case 3:
 
