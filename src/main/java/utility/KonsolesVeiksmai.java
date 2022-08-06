@@ -61,7 +61,9 @@ public class KonsolesVeiksmai {
 
 
     }
+    public static int nuskaitytiKiekBrangiausiuIndigrientu() {
+        System.out.println("Įveksite už kiek top brangiausiu ingridientu: ");
+        return skait.nextInt();
 
-
-
+    }
 }

@@ -2,6 +2,7 @@ package dbveiksmai;
 
 import entity.Indigrientas;
 import entity.Receptai;
+import utility.KonsolesVeiksmai;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -92,18 +93,29 @@ public class IngridentoVeiksmai {
 
     public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis, int x) {
         ArrayList<Indigrientas> brangiausiIndigrijentai = new ArrayList<>();
-        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT (5 )";
+        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT ? ";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            paruostukas.setInt(1, x);
+            paruostukas.setInt(KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu(?));
+          /* paruostukas.setInt(1, x);*/
             ResultSet rezultatas = paruostukas.executeQuery();
             int id = rezultatas.getInt("id");
-            String pavadinimas = rezultatas.getString("pavadinimas");
+            while (rezultatas.next()) {
+
+                String pavadinimas = rezultatas.getString("pavadinimas");
+                Double kaina = rezultatas.getDouble("kaina");
+                Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);
+                brangiausiIndigrijentai.add(laikiniIndigrientai);
+            }
+
+
+
+
+
+            /*String pavadinimas = rezultatas.getString("pavadinimas");
             Double kaina = rezultatas.getDouble("kaina");
-            Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);
-            /*while (rezultatas.next()) {
-                kainos.add(indigrientas( rezultatas.getDouble("kaina"), rezultatas.getInt("grazintiKainas"));
-            }*/
+            /*Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);*/
+
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Nepavyko pasiekti duomenų.");

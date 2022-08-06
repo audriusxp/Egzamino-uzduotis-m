@@ -49,7 +49,7 @@ public class PagrindinePrograma {
                 break;
             case 3:
 
-            ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus = IngridentoVeiksmai.grazintiBrangiausiusIngridijentus(jungtis);
+            ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus = IngridentoVeiksmai.grazintiBrangiausiusIngridijentus(jungtis ,5);
 
             break;
 
