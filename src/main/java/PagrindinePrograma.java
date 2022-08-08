@@ -63,6 +63,11 @@ public class PagrindinePrograma {
            /* ArrayList<Indigrientas> grazintiPigesniuIngridijentus = IngridentoVeiksmai.grazintiBrangiausiusIngridijentus(jungtis );*/
 
             break;
+            case 5:
+                visiReceptai= ReceptoVeiksmai.grazintiIndigrijentusRecepteX(jungtis, 1);
+                PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
+                System.out.println("Recepto  = " + visiIngredijentai.size());
+
 
 
               /*
@@ -93,6 +98,7 @@ public class PagrindinePrograma {
 
 
         }
+
     }
 
 
