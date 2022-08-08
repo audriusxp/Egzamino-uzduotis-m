@@ -49,8 +49,14 @@ public class PagrindinePrograma {
                 System.out.println("vis = " + visiIngredijentai.size());
                 break;
             case 3:
+                visiIngredijentai =IngridentoVeiksmai.grazintiPigesniusUz(jungtis,1);
+                PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
+                System.out.println("pigesniUzX" + visiIngredijentai.size());
 
-            ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus = IngridentoVeiksmai.grazintiBrangiausiusIngridijentus(jungtis ,5);
+                
+               ;
+
+           /* ArrayList<Indigrientas> grazintiPigesniuIngridijentus = IngridentoVeiksmai.grazintiBrangiausiusIngridijentus(jungtis );*/
 
             break;
 

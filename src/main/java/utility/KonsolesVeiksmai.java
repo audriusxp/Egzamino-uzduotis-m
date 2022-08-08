@@ -66,4 +66,8 @@ public class KonsolesVeiksmai {
         return skait.nextInt();
 
     }
+    public static int nuskaitytiPigesniuIngdirijentuUzX(){
+        System.out.println("Iveskite kaina ,kad suzinoti ingridientus pigesnius uz");
+        return skait.nextInt();
+    }
 }

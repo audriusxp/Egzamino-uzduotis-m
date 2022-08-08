@@ -70,17 +70,16 @@ public class IngridentoVeiksmai {
     }
 
 
-
-    public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis, int x) {
+    public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis) {
         ArrayList<Indigrientas> brangiausiIndigrijentai = new ArrayList<>();
-        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT ? ";
+        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT  ?";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            paruostukas.setInt(KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu(?));
+            paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu());
             ResultSet rezultatas = paruostukas.executeQuery();
-            int id = rezultatas.getInt("id");
-            while (rezultatas.next()) {
 
+            while (rezultatas.next()) {
+                int id = rezultatas.getInt("id");
                 String pavadinimas = rezultatas.getString("pavadinimas");
                 Double kaina = rezultatas.getDouble("kaina");
                 Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);
@@ -88,12 +87,30 @@ public class IngridentoVeiksmai {
             }
 
 
-             } catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Nepavyko pasiekti duomenų.");
         }
         return brangiausiIndigrijentai;
 
+
+    }
+
+    public static ArrayList<Indigrientas> grazintiPigesniusUz(Connection jungtis, int x) {
+        ArrayList<Indigrientas> pigesniUzX = new ArrayList<>();
+        String sqlUzklausa = " SELECT * FROM indigrientas WHERE kaina < ?  ";
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiPigesniuIngdirijentuUzX());
+            ResultSet rezultatas = paruostukas.executeQuery();
+            while (rezultatas.next()) {
+                pigesniUzX.add(new Indigrientas(rezultatas.getInt("id"), rezultatas.getString("pavadinimas"), rezultatas.getDouble("kaina")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko pasiekti duomenų.");
+        }
+        return pigesniUzX;
 
     }
 }
