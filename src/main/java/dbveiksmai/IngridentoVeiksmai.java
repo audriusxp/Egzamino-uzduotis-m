@@ -69,35 +69,14 @@ public class IngridentoVeiksmai {
         return vidurkis;
     }
 
-   /* public static ArrayList<Indigrientas> brangiausi(Connection jungtis) {
-        ArrayList<Indigrientas> brangiausiIndigrijeintai = new ArrayList<>();
-        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT (? )";
 
-        try {
-                PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-                ResultSet rezultatas = paruostukas.executeQuery();
-                while (rezultatas.next()) {
-
-                    Double kaina = rezultatas.getDouble("kaina");
-                    Indigrientas laikiniIndigrientai = new Indigrientas (kaina);
-                    brangiausiIndigrijeintai.add(laikiniIndigrientai);
-                }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Nepavyko gauti duomenų  duomenu bazeje");
-        }
-        return brangiausiIndigrijeintai;
-
-
-    }*/
 
     public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis, int x) {
         ArrayList<Indigrientas> brangiausiIndigrijentai = new ArrayList<>();
         String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT ? ";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            paruostukas.setInt(KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu();
-          /* paruostukas.setInt(1, x);*/
+            paruostukas.setInt(KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu(?));
             ResultSet rezultatas = paruostukas.executeQuery();
             int id = rezultatas.getInt("id");
             while (rezultatas.next()) {
@@ -109,14 +88,7 @@ public class IngridentoVeiksmai {
             }
 
 
-
-
-
-            /*String pavadinimas = rezultatas.getString("pavadinimas");
-            Double kaina = rezultatas.getDouble("kaina");
-            /*Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);*/
-
-        } catch (SQLException e) {
+             } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Nepavyko pasiekti duomenų.");
         }
