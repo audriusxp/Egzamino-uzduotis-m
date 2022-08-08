@@ -91,12 +91,12 @@ public class IngridentoVeiksmai {
 
     }*/
 
-    public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis, int x) {
+    public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis) {
         ArrayList<Indigrientas> brangiausiIndigrijentai = new ArrayList<>();
         String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT ? ";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            paruostukas.setInt(KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu();
+            paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu();
           /* paruostukas.setInt(1, x);*/
             ResultSet rezultatas = paruostukas.executeQuery();
             int id = rezultatas.getInt("id");
