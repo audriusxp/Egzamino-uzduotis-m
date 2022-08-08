@@ -57,17 +57,25 @@ public class KonsolesVeiksmai {
         System.out.println("Įveskite kaina: ");
         Double kaina = skait.nextDouble();
 
-        return new Indigrientas(pavadinimas,kaina);
+        return new Indigrientas(pavadinimas, kaina);
 
 
     }
-    public static int nuskaitytiKiekBrangiausiuIndigrientu() {
+
+    /*public static int nuskaitytiKiekBrangiausiuIndigrientu() {
         System.out.println("Įveksite už kiek top brangiausiu ingridientu: ");
         return skait.nextInt();
 
-    }
-    public static int nuskaitytiPigesniuIngdirijentuUzX(){
+    }*/
+    public static int nuskaitytiPigesniuIngdirijentuUzX() {
         System.out.println("Iveskite kaina ,kad suzinoti ingridientus pigesnius uz");
         return skait.nextInt();
+    }
+
+    public static int nuskaitytiBrangesniuX() {
+        System.out.println("Iveskite kaina ,kad suzinoti ingridientus pigesnius uz");
+        return skait.nextInt();
+
+
     }
 }

@@ -1,6 +1,8 @@
 package dbveiksmai;
 
+import entity.Indigrientas;
 import entity.Receptai;
+import utility.KonsolesVeiksmai;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -44,13 +46,25 @@ public class ReceptoVeiksmai {
             System.out.println("Nepavyko įdėti duomenų į duomenų bazę");
         }
     }
+   /* public static ArrayList<Receptai> grazintiIndigrijentusRecepteX(Connection jungtis, int x) {
+        ArrayList<Indigrientas> receptoXindigrientai = new ArrayList<>();
+        String sqlUzklausa = " SELECT * FROM indigrientas WHERE kaina < ?  ";
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiPigesniuIngdirijentuUzX());
+            ResultSet rezultatas = paruostukas.executeQuery();
+            while (rezultatas.next()) {
+                pigesniUzX.add(new Indigrientas(rezultatas.getInt("id"), rezultatas.getString("pavadinimas"), rezultatas.getDouble("kaina")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko pasiekti duomenų.");
+        }
+        return pigesniUzX;*/
+
 }
 
-   /* public static void idetiReceptai(Connection jungtis, ReceptaiId receptas) {
-    }
 
-    public static ReceptaiId gautiVisusReceptai(Connection jungtis) {
-    }*/
 
 
 

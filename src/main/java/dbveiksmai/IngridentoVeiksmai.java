@@ -68,9 +68,30 @@ public class IngridentoVeiksmai {
         }
         return vidurkis;
     }
+    public static ArrayList<Indigrientas> grazintiBrangesnius(Connection jungtis, int x) {
+        ArrayList<Indigrientas> brangesniX = new ArrayList<>();
+        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT  ?  ";
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiBrangesniuX());
+            ResultSet rezultatas = paruostukas.executeQuery();
+            while (rezultatas.next()) {
+                brangesniX.add(new Indigrientas(rezultatas.getInt("id"), rezultatas.getString("pavadinimas"), rezultatas.getDouble("kaina")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko pasiekti duomenų.");
+        }
+        return brangesniX;
 
 
-    public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis) {
+
+
+
+
+
+
+   /* public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis) {
         ArrayList<Indigrientas> brangiausiIndigrijentai = new ArrayList<>();
         String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT  ?";
         try {
@@ -91,7 +112,7 @@ public class IngridentoVeiksmai {
             e.printStackTrace();
             System.out.println("Nepavyko pasiekti duomenų.");
         }
-        return brangiausiIndigrijentai;
+        return brangiausiIndigrijentai;*/
 
 
     }
