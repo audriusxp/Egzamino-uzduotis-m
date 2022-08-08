@@ -78,7 +78,7 @@ public class KonsolesVeiksmai {
 
 
     }
-    public static int receptoIngridientusNr(){
+    public static int nuskaitytiReceptoNr(){
         System.out.println("Iveskite recepto id nr ,kad suzinoti ingridientus ");
         return skait.nextInt();
 

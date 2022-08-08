@@ -46,12 +46,13 @@ public class ReceptoVeiksmai {
             System.out.println("Nepavyko įdėti duomenų į duomenų bazę");
         }
     }
-   public static ArrayList<Receptai> grazintiIndigrijentusRecepteX(Connection jungtis, int x) {
+
+    public static ArrayList<Indigrientas> grazintiIndigrijentusRecepteX(Connection jungtis, int x) {
         ArrayList<Indigrientas> receptoXindigrientai = new ArrayList<>();
-        String sqlUzklausa = "  SELECT*FROM receptu_ingredientai JOIN receptai  ON   receptu_ingredientai.recepto_id = receptai.id WHERE id ?  ";
+        String sqlUzklausa = "  SELECT*FROM receptu_ingredientai JOIN receptai  ON   receptu_ingredientai.recepto_id = receptai.id WHERE id  (?)  ";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            paruostukas.setInt(1, KonsolesVeiksmai.receptoIngridientusNr());
+            paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiReceptoNr());
             ResultSet rezultatas = paruostukas.executeQuery();
             while (rezultatas.next()) {
                 receptoXindigrientai.add(new Indigrientas(rezultatas.getInt("id"), rezultatas.getString("pavadinimas"), rezultatas.getDouble("kaina")));
@@ -62,6 +63,7 @@ public class ReceptoVeiksmai {
         }
         return receptoXindigrientai;
 
+    }
 }
 
 
