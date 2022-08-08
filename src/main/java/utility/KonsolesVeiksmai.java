@@ -62,11 +62,7 @@ public class KonsolesVeiksmai {
 
     }
 
-    /*public static int nuskaitytiKiekBrangiausiuIndigrientu() {
-        System.out.println("Įveksite už kiek top brangiausiu ingridientu: ");
-        return skait.nextInt();
 
-    }*/
     public static int nuskaitytiPigesniuIngdirijentuUzX() {
         System.out.println("Iveskite kaina ,kad suzinoti ingridientus pigesnius uz");
         return skait.nextInt();

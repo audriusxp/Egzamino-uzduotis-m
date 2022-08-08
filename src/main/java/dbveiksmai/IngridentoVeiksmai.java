@@ -85,36 +85,6 @@ public class IngridentoVeiksmai {
         return brangesniX;
 
 
-
-
-
-
-
-
-   /* public static ArrayList<Indigrientas> grazintiBrangiausiusIngridijentus(Connection jungtis) {
-        ArrayList<Indigrientas> brangiausiIndigrijentai = new ArrayList<>();
-        String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT  ?";
-        try {
-            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu());
-            ResultSet rezultatas = paruostukas.executeQuery();
-
-            while (rezultatas.next()) {
-                int id = rezultatas.getInt("id");
-                String pavadinimas = rezultatas.getString("pavadinimas");
-                Double kaina = rezultatas.getDouble("kaina");
-                Indigrientas laikiniIndigrientai = new Indigrientas(id, pavadinimas, kaina);
-                brangiausiIndigrijentai.add(laikiniIndigrientai);
-            }
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Nepavyko pasiekti duomenų.");
-        }
-        return brangiausiIndigrijentai;*/
-
-
     }
 
     public static ArrayList<Indigrientas> grazintiPigesniusUz(Connection jungtis, int x) {
