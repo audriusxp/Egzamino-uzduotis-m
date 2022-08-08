@@ -1,4 +1,4 @@
-package dbveiksmai;
+Jipackage dbveiksmai;
 
 import entity.Indigrientas;
 import entity.Receptai;
@@ -76,7 +76,7 @@ public class IngridentoVeiksmai {
         String sqlUzklausa = " select * FROM indigrientas ORDER BY kaina DESC LIMIT ? ";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-            paruostukas.setInt(KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu(?));
+            paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiKiekBrangiausiuIndigrientu());
             ResultSet rezultatas = paruostukas.executeQuery();
             int id = rezultatas.getInt("id");
             while (rezultatas.next()) {
