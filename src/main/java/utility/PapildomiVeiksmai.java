@@ -1,5 +1,6 @@
 package utility;
 
+import entity.Indigrientas;
 import entity.Receptai;
 
 import java.util.ArrayList;
@@ -14,9 +15,9 @@ public class PapildomiVeiksmai {
         }
     }
 
-    public static <N> void isvestiListaEilutemis2(ArrayList<N> visiIndigrientai){
-        for (N n:visiIndigrijentai){
-            System.out.println(" visiIndigrientai = " + n);
+    public static <N> void isvestiListaEilutemis2(ArrayList<Indigrientas> receptoXindigrientai){
+        for (Indigrientas pavadinimas:receptoXindigrientai){
+            System.out.println(" receptoXin = " + pavadinimas);
         }
     }
 }
