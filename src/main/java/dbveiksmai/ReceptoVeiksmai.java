@@ -39,7 +39,9 @@ public class ReceptoVeiksmai {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
             paruostukas.setString(1, receptai.getPavadinimas());
             paruostukas.setDouble(2, receptai.getKaina());
-            paruostukas.setString(3, receptai.getNurodymai());
+
+
+            paruostukas.setString(4, receptai.getNurodymai());
             paruostukas.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,13 +51,17 @@ public class ReceptoVeiksmai {
 
     public static ArrayList<Indigrientas> grazintiIndigrijentusRecepteX(Connection jungtis, int x) {
         ArrayList<Indigrientas> receptoXindigrientai = new ArrayList<>();
-        String sqlUzklausa = "  SELECT * FROM receptu_ingredientai JOIN receptai ON receptu_ingredientai.recepto_id = receptai.id WHERE receptai.id=?  ";
+        String sqlUzklausa = " SELECT indigrientas.pavadinimas\n" +
+                " FROM receptu_ingredientai \n" +
+                " JOIN receptai ON receptu_ingredientai.recepto_id = receptai.id\n" +
+                " JOIN indigrientas ON receptu_ingredientai.indigriento_id= indigrientas.id\n" +
+                " WHERE receptai.id = ? ";
         try {
             PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
             paruostukas.setInt(1, KonsolesVeiksmai.nuskaitytiReceptoNr());
             ResultSet rezultatas = paruostukas.executeQuery();
             while (rezultatas.next()) {
-                receptoXindigrientai.add(new Indigrientas(rezultatas.getInt("indigriento_id"), rezultatas.getString("pavadinimas"), rezultatas.getDouble("kaina")));
+                receptoXindigrientai.add(new Indigrientas( rezultatas.getString("pavadinimas")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

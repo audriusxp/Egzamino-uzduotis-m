@@ -13,6 +13,12 @@ public class PapildomiVeiksmai {
             System.out.println("visiReceptai = " + t);
         }
     }
+
+    public static <N> void isvestiListaEilutemis2(ArrayList<N> visiIndigrientai){
+        for (N n:visiIndigrijentai){
+            System.out.println(" visiIndigrientai = " + n);
+        }
+    }
 }
 
 

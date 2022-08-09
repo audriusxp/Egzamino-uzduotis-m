@@ -55,6 +55,10 @@ public class Indigrientas {
     public Indigrientas(Double kaina) {
         this.kaina = kaina;
     }
+
+    public Indigrientas(String pavadinimas) {
+        this.pavadinimas = pavadinimas;
+    }
 }
 
 

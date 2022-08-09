@@ -48,7 +48,7 @@ public class PagrindinePrograma {
                 break;
             case 5:
                 visiIngredijentai= ReceptoVeiksmai.grazintiIndigrijentusRecepteX(jungtis, 1);
-                PapildomiVeiksmai.isvestiListaEilutemis(visiIngredijentai);
+                PapildomiVeiksmai.isvestiListaEilutemis2(visiIngredijentai);
                 System.out.println("Recepto  = " + visiIngredijentai.size());
                 break;
 
